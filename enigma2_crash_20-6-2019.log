@@ -1,0 +1,166 @@
+Open Vision Enigma2 crash log
+
+crashdate=do jun 20 22:24:13 2019
+compiledate=Jun 19 2019
+skin=OctEtFHD/skin.xml
+sourcedate=2019-06-19
+branch=develop
+rev=b15f1f3
+component=enigma2, signal
+
+stbmodel=wetekplay2
+stbbrand=wetek
+kernelcmdline=root=/dev/mmcblk0p2 rootwait rw console=ttyS0,115200n8 console=tty0 no_console_suspend hdmimode=720p60hz m_bpp=32 vout= fsck.repair=yes net.ifnames=0 elevator=noop disablehpd=true mac=E8:18:63:50:F9:D0 usid=A03B02C0000791
+nimsockets=NIM Socket 0:
+imageversion=Brand=wetek
+imageissue=Open Vision Enigma2 Image For %h
+
+
+ADD Peer et9x00=et9x00.local:8001
+ADD Peer et9x00=et9x00.local:8001
+[eDVBPESReader] DMX_SET_PES_FILTER pid=ffffffff:  Invalid argument
+Backtrace:
+/usr/bin/enigma2(_Z17handleFatalSignaliP9siginfo_tPv) [0x474C4C]
+linux-vdso.so.1(__kernel_rt_sigreturn) [0x7FAE1CA510]
+/lib/libc.so.6(fclose) [0x7FAD04D7B0]
+/usr/lib/libamadec.so(alsactl_parser) [0x7FAD49C168]
+-------FATAL SIGNAL
+
+
+dmesg
+
+<6>[ 5398.881732@0] codec:Enter set parameter cmd1.
+<6>[ 5398.883099@0] codec:vdec1 video changed to 3840 x 2160 60 fps clk->648MHZ
+<6>[ 5398.887279@0] codec:actual_dpb_size 24 max_dpb_size 12
+<6>[ 5398.892502@0] codec:video first pts = 64054787
+<6>[ 5399.445918@0] pre_de_buf_config: source change: 0x0/0/0/0=>0x8009/720/576/0
+<4>[ 5399.468652@0] vpts to scr, apts = 0x640363c7, vpts = 0x6403d9e7
+<6>[ 5399.468991@0] codec:[video4osd] first  picture {720,576} pts:64055597,
+<6>[ 5399.488707@0] codec:VsyncEnableVideoLayer
+<7>[ 5399.508657@0] DI: recycle_keep_buffer recycle keep cur di_buf 0 (
+<7>[ 5399.508683@0] DI:  0 DI:  1 
+<7>[ 5399.508717@0] DI: )
+<6>[ 5400.333407@0] codec:finished correct frame dur
+<6>[ 5400.333569@0] codec: new=3840,old_duration=3840,cnt=25
+<6>[ 5404.125163@1] gfx_open
+<6>[ 5404.366574@1] codec:w=3840-height=544 cur_index:f7
+<6>[ 5404.550492@3] wetekfb wetekfb.15: gfx_release
+<6>[ 5408.549054@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5409.127400@3] STOP PLAY DMX:0
+<6>[ 5409.127549@3] codec:video first checkin pts = 0
+<6>[ 5409.131421@3] tv_vout: vout [tv_set_vframe_rate_end_hint] return mode = 60, policy = 1!
+<7>[ 5409.139358@3] DI: di_receiver_event_fun , is_bypass() 0 trick_mode 0 bypass_all 0
+<6>[ 5409.139422@3] DI: disabled, not keep buffer.
+<7>[ 5409.141482@3] DI: di_receiver_event_fun: vf_notify_receiver unreg
+<6>[ 5409.141717@3] codec:DisableVideoLayer()
+<6>[ 5409.145283@3] codec:free_alloced_keep_buffer           (null).          (null).          (null)
+<6>[ 5409.148671@0] codec:VsyncDisableVideoLayer
+<6>[ 5409.158114@3] codec:keep exit is di
+<4>[ 5409.161408@3] [tsync_avevent]event:2, param 0
+<6>[ 5409.165775@3] codec:video first pts = 0
+<6>[ 5409.169599@0] di_uninit_buf keep cur di_buf 7 (0 8 4)
+<6>[ 5409.176718@0] codec:vdec1 video changed to 0 x 0 0 fps clk->200MHZ
+<6>[ 5409.182381@1] codec:adec_release
+<6>[ 5409.183960@1] codec:Subtitle stbuf alloced at 0000000063b00000, size = 262144
+<6>[ 5409.270219@2] codec:video_blackout_policy_store(0)
+<6>[ 5409.270897@2] codec:Video stbuf alloced at 0000000063b00000, size = 15728640
+<7>[ 5409.277797@2] DI: di_receiver_event_fun: vframe provider reg
+<6>[ 5409.288998@2] codec:video first pts = 0
+<6>[ 5409.318476@0] pre_de_buf_config: source change: 0x0/0/0/0=>0x9000/1920/1080/0
+<6>[ 5409.325782@2] codec:vdec1 video changed to 1920 x 1080 25 fps clk->166MHZ
+<4>[ 5409.348654@0] vpts to scr, apts = 0x0, vpts = 0x0
+<6>[ 5409.348778@0] codec:[video4osd] first  picture {1920,1080} pts:0,
+<6>[ 5409.368691@0] codec:VsyncEnableVideoLayer
+<6>[ 5409.521526@0] tv_vout: vout [tv_set_vframe_rate_end_hint] return mode = 60, policy = 1!
+<7>[ 5409.524219@0] DI: di_receiver_event_fun , is_bypass() 0 trick_mode 0 bypass_all 0
+<7>[ 5409.524247@0] DI: di_receiver_event_fun: vf_notify_receiver unreg
+<6>[ 5409.524304@3] codec:keep exit is di
+<4>[ 5409.527406@3] [tsync_avevent]event:2, param 0
+<6>[ 5409.531689@3] codec:video first pts = 0
+<6>[ 5409.535488@0] di_uninit_buf keep cur di_buf 0 (1 2 -1)
+<3>[ 5409.970813@2] fb: command 0x23 not supported (enigma2)
+<6>[ 5409.971466@2] gfx_open
+<6>[ 5409.973094@2] wetekfb wetekfb.15: manual blit 1
+<4>[ 5410.146104@2] dstleft_vmpeg_write()dst_left: 0
+<4>[ 5410.146250@2] dsttop_vmpeg_write()dst_top 0
+<4>[ 5410.149155@2] dstwidth_vmpeg_write()dst_width: 0
+<4>[ 5410.153728@2] dstheight_vmpeg_write()dst_height: 0
+<4>[ 5414.161844@1] policy_video_write()kbuff: bestfit
+<4>[ 5414.162475@1] alpha_video_write(): alpha: 255
+<6>[ 5416.341500@1] BT_RADIO going: on
+<6>[ 5416.341525@1] BCM_BT: going ON
+<4>[ 5416.980708@1] policy_video_write()kbuff: bestfit
+<4>[ 5416.980832@1] policy2_video_write()kbuff: bestfit
+<4>[ 5416.984731@1] policy_video_write()kbuff: bestfit
+<4>[ 5416.989243@1] policy2_video_write()kbuff: bestfit
+<4>[ 5416.993981@1] policy_video_write()kbuff: bestfit
+<4>[ 5416.998388@1] policy2_video_write()kbuff: bestfit
+<4>[ 5417.003276@1] policy_video_write()kbuff: bestfit
+<4>[ 5417.007506@1] policy2_video_write()kbuff: bestfit
+<4>[ 5417.012372@1] e2procfs_vmode50_video_write(): buffer: 1080p50hz
+<4>[ 5417.018016@1] e2procfs_vmode50_video_write(): validate 18
+<4>[ 5417.024028@1] policy_video_write()kbuff: bestfit
+<4>[ 5417.028031@1] policy2_video_write()kbuff: bestfit
+<3>[ 5421.404875@3] dvb_demux_feed_del: feed not in list (type=0 state=0 pid=ffff)
+<6>[ 5425.084921@1] gfx_open
+<6>[ 5425.344130@1] codec:w=3840-height=544 cur_index:f1
+<6>[ 5425.523005@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5435.291871@3] gfx_open
+<6>[ 5435.478326@3] codec:w=3840-height=544 cur_index:f7
+<6>[ 5435.635455@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5447.072374@2] gfx_open
+<6>[ 5447.259276@2] codec:w=3840-height=544 cur_index:f1
+<6>[ 5447.432728@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5457.368304@0] gfx_open
+<6>[ 5457.559462@0] codec:w=3840-height=544 cur_index:f7
+<6>[ 5457.706927@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5469.082067@0] gfx_open
+<6>[ 5469.288758@0] codec:w=3840-height=544 cur_index:f7
+<6>[ 5469.457001@1] wetekfb wetekfb.15: gfx_release
+<6>[ 5480.071282@1] gfx_open
+<6>[ 5480.388822@1] codec:w=3840-height=544 cur_index:f7
+<6>[ 5480.591806@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5491.067473@1] gfx_open
+<6>[ 5491.248561@1] codec:w=3840-height=544 cur_index:f7
+<6>[ 5491.397536@2] wetekfb wetekfb.15: gfx_release
+<6>[ 5502.068766@3] gfx_open
+<6>[ 5502.290190@3] codec:w=3840-height=544 cur_index:f1
+<6>[ 5502.499567@1] wetekfb wetekfb.15: gfx_release
+<6>[ 5512.299750@1] gfx_open
+<6>[ 5512.550954@1] codec:w=3840-height=544 cur_index:f7
+<6>[ 5512.731939@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5523.293302@3] gfx_open
+<6>[ 5523.549395@3] codec:w=3840-height=544 cur_index:f7
+<6>[ 5523.727073@2] wetekfb wetekfb.15: gfx_release
+<6>[ 5534.283969@3] gfx_open
+<6>[ 5534.540996@3] codec:w=3840-height=544 cur_index:f1
+<6>[ 5534.718189@0] wetekfb wetekfb.15: gfx_release
+<6>[ 5536.672689@1] codec:video_blackout_policy_store(0)
+<6>[ 5536.673078@1] codec:video_blackout_policy_store(1)
+<4>[ 5536.677512@1] codec:set pcrid = 0x259
+<6>[ 5536.680513@1] DMX:0
+<6>[ 5536.689875@1] codec:Audio stbuf alloced at 0000000063b00000, size = 1572864
+<6>[ 5536.690717@1] audio_dsp: codec_fatal_err value:0
+<6>[ 5536.690717@1]  
+<6>[ 5536.691368@1] codec:Video stbuf alloced at 0000000066a00000, size = 15728640
+<7>[ 5536.694646@1] DI: di_receiver_event_fun: vframe provider reg
+<6>[ 5536.705590@2] codec:tsdemux video_pid = 0x259, audio_pid = 0x25a,
+<6>[ 5536.708070@2] audio_dsp: IEC958_mode_codec= 0, IEC958 type 2 CH PCM
+<6>[ 5536.708089@2] audio_dsp: last mode 0,now 0
+<6>[ 5536.712894@2] aml_spdif_dai: aml_hw_iec958_init,runtime->rate=48000, runtime->channels=2, same source mode(0)
+<6>[ 5536.712995@2] aml_spdif_dai: set normal 512 fs /4 fs
+<6>[ 5536.713043@2] aml_audio_hw: IEC958 16bit
+<4>[ 5536.713072@2] hdmitx: audio: aout notify rate 48000
+<4>[ 5536.713089@2] hdmitx: audio: aout notify size 16
+<4>[ 5536.713101@2] hdmitx: audio: no update
+<6>[ 5536.751043@1] codec:sub_pid = 0xffff, pcrid = 0x259
+<6>[ 5536.757046@1] codec:video first pts = 0
+<6>[ 5536.760664@1] codec:audio first pts = 0
+<6>[ 5536.760777@1] START PLAY DMX:0
+<6>[ 5536.760853@1] codec:[reset_pcr_regs:500] clk_81 = 9ef21aa clk_unit =823
+<6>[ 5536.760861@1] codec:[tsdemux_init] To use device 1,pcr_num=0
+<6>[ 5536.760867@1] codec:wait_pcr_count = 0
+<6>[ 5536.773157@0] codec:video first checkin pts = 2bdf9f95
+<6>[ 5536.773167@0] codec:first check in vpts <0x0:0x2bdf9f95> ok!
+<6>[ 5536.789552@0] codec:first check in apts <0x0:0x2bdf40d6> ok!
+
